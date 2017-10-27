@@ -1,0 +1,22 @@
+<table class="table table-bordered table-hover table-condensed">
+  <tr>
+    <td>#</td>
+    <td>Template Name</td>
+    <td>Actions</td>
+  </tr>
+  <tr ng-repeat="data in lookupTemplate" class="editable-row">
+    <td>
+        {{$index + 1}}
+    </td>
+    <td>
+        <span editable-text="data.templateName" e-name="templateName" e-form="rowform" e-required>
+          {{ data.templateName || 'empty' }}
+        </span>
+    </td>
+    <td>
+      <div class="buttons" ng-show="!rowform.$visible">
+      	<button class="btn btn-danger editable-table-button btn-xs" ng-click="openTemplateModel(data.id)">view</button>
+      </div>
+    </td>
+  </tr>
+</table>

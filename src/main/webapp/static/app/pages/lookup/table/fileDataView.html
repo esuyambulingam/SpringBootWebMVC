@@ -1,0 +1,78 @@
+
+<div class="content-top clearfix">
+  <h1 class="al-title">File Data</h1>
+</div>
+
+<div class="panel light-text">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row clearfix">
+          <label for="fileName" class="col-sm-3 control-label">File Name</label>
+          <div class="col-sm-9">
+            <input type="hidden" ng-model="fileId">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="" value="" ng-model="fileName" ng-disabled=true>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="row">
+    	<div class="col-md-8">
+                	<table class="table table-bordered table-hover table-condensed">
+  <tr>
+    <td>#</td>
+    <td>Application</td>
+    <td>Attribute</td>
+    <td>Role Values</td>
+ <td>L2 approver</td>
+ <td>RA approver</td>
+ <td>Form Type</td>
+   </tr>
+  <tr ng-repeat="data in fileData" class="editable-row">
+    <td>
+        {{$index + 1}}
+    </td>
+    <td>
+        <span editable-text="data.application" e-name="application" e-form="rowform" e-required>
+          {{ data.application|| 'empty' }}
+        </span>
+    </td>
+ <td>
+        <span editable-text="data.attribute" e-name="attribute" e-form="rowform" e-required>
+          {{ data.attribute|| 'empty' }}
+        </span>
+    </td>
+
+
+ <td>
+        <span editable-text="data.role" e-name="role" e-form="rowform" e-required>
+          {{ data.role|| 'empty' }}
+        </span>
+    </td>
+<td>
+        <span editable-text="data.l2Approve" e-name="l2Approve" e-form="rowform" e-required>
+          {{ data.l2Approve|| 'empty' }}
+        </span>
+    </td>
+
+<td>
+        <span editable-text="data.ra_Approve" e-name="ra_Approve" e-form="rowform" e-required>
+          {{ data.ra_Approve|| 'empty' }}
+        </span>
+    </td>
+<td>
+        <span editable-text="data.formType" e-name="formType" e-form="rowform" e-required>
+          {{ data.formType|| 'empty' }}
+        </span>
+    </td>
+
+  </tr>
+</table>
+    		</div>
+
+  	  </div>
+	<br>
+</button>
+</div>
+</div>

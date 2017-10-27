@@ -1,0 +1,36 @@
+<div class="content-top clearfix">
+  <h1 class="al-title">Uploaded Files</h1>
+</div>
+
+<div class="panel light-text">
+  <div class="panel-body">
+      <div class="row col-md-12">
+    	<div class="col-md-8">
+<table class="table table-bordered table-hover table-condensed">
+  <tr>
+    <td>#</td>
+    <td>File Name</td>
+    <td>Actions</td>
+  </tr>
+  <tr ng-repeat="data in files" class="editable-row">
+    <td>
+        {{$index + 1}}
+    </td>
+    <td>
+        <span editable-text="data.fileName" e-name="fileName" e-form="rowform" e-required>
+          {{ data.fileName || 'empty' }}
+        </span>
+    </td>
+    <td>
+      <div class="buttons" ng-show="!rowform.$visible">
+      	<button class="btn btn-danger editable-table-button btn-xs" ng-click="openFileModel(data.fileId)">view</button>
+        <!-- <button class="btn btn-danger editable-table-button btn-xs" ng-click="openTemplateModel('static/app/pages/lookup/table/templateEdit.html', 'lg')">view</button> -->
+      </div>
+    </td>
+  </tr>
+</table>
+
+</div>
+	<br>
+</div>
+</div>

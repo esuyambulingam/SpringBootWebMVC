@@ -1,0 +1,80 @@
+<table class="table table-bordered table-hover table-condensed">
+  <tr>
+    <td>#</td>
+    <td>Field Name</td>
+    <td>Field Type</td>
+    <td>Sample Values</td>
+    <td>Actions</td>
+  </tr>
+  <tr ng-repeat="data in lookupData" class="editable-row">
+    <td ng-show=data.showEntry>
+        {{$index+1}}
+    </td>
+    <td ng-show=data.showEntry>
+        <span editable-text="data.sysFieldName" e-ng-disabled=data.disableEntry e-name="sysFieldName" e-form="rowform" e-required>
+          {{ data.sysFieldName || 'empty' }}
+        </span>
+    </td>
+    <td class="select-td" ng-show=data.showEntry>
+
+		<div ng-switch on = "data.sysFieldName">
+
+        <span ng-switch-default editable-select="data.dataType" e-name="dataType" e-form="rowform" e-selectpicker
+              e-ng-options="s.value as s.text for s in dataTypes">
+          {{ showdataType(data) }}
+        </span>
+
+        <span ng-switch-when="Action" editable-select="data.dataType" e-name="dataType" e-form="rowform" e-selectpicker
+              e-ng-options="s.value as s.text for s in dataTypesAction">
+          {{ showdataTypeAction(data) }}
+        </span>
+
+	  	<span ng-switch-when="Manager Approve/Reject" editable-select="data.dataType" e-name="dataType" e-form="rowform" e-selectpicker
+           e-ng-options="s.value as s.text for s in dataTypesDecision">
+       	  {{ showdataTypeDecision(data) }}
+    	</span>
+
+		<span ng-switch-when="L2 Approve/Reject" editable-select="data.dataType" e-name="dataType" e-form="rowform" e-selectpicker
+              e-ng-options="s.value as s.text for s in dataTypesDecision">
+          {{ showdataTypeDecision(data) }}
+       	</span>
+
+       	<span ng-switch-when="RA Approve/Reject" editable-select="data.dataType" e-name="dataType" e-form="rowform" e-selectpicker
+              e-ng-options="s.value as s.text for s in dataTypesDecision">
+          {{ showdataTypeDecision(data) }}
+       	</span>
+
+        </div>
+
+    </td>
+    <td class="select-td" ng-show=data.showEntry>
+        <span editable-text="data.sampleData" e-name="sampleData" e-form="rowform" e-required>
+          {{ data.sampleData || '-' }}
+        </span>
+    </td>
+    <td ng-show=data.showEntry>
+      <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline"
+            shown="inserted == data">
+        <button type="submit" ng-disabled="rowform.$waiting" ng-click="onApplicationSubmit(rowform.$data,$index)" class="btn btn-primary editable-table-button btn-xs">
+          <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </form>
+      <div class="buttons" ng-show="!rowform.$visible">
+        <!-- <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">Edit</button> -->
+        <button class="btn btn-primary btn-xs editable-table-button" ng-click="rowform.$show()"><span class="glyphicon glyphicon-pencil"></span></button>
+        <button class="btn btn-danger btn-xs editable-table-button" ng-show="flagShow"  ng-click="removeEntry($index)"><span class="glyphicon glyphicon-trash"></span>	</button>
+        <!-- <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeEntry($index)">Delete</button> -->
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+

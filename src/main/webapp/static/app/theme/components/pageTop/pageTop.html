@@ -1,0 +1,45 @@
+<header id="header">
+
+        <nav class="navbar navbar-inverse" role="banner" >
+            <div class="container">
+                <div class="navbar-header" style="width:524px; display:inline;">
+
+                 <span > <img id="logo" class="pull-left" src="static/images/cognizant-logo.png"
+
+                     alt="cognizantlogo" href="#" style="width:130px;margin-top:10px;margin-right:30px;" /></span>
+
+                    <a class="navbar-brand" href="#" style="margin:10px">Test Data Generation</a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right" style="display:inline;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Template  <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/lookupcreate">Create</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="#/testdatagen">Data Generation</a></li>
+
+ 						<li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">File<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+								<li class="active"><a href="#/fileupload">file upload</a></li>
+                                <li class="active"><a href="#/fileDetailsView">View</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                        <form id="logout" action="logout" method="post" >
+  							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+						</form>
+						<!-- <c:if test="${pageContext.request.userPrincipal.name != null}">
+							<a href="javascript:document.getElementById('logout').submit()">Logout</a>
+						</c:if> -->
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+
+    </header><!--/header-->

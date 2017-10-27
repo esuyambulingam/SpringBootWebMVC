@@ -1,0 +1,33 @@
+<table class="table table-bordered table-hover table-condensed" id="testDataTable">
+  <thead>
+  <tr>
+  	<th>#</th>
+    <th ng-repeat="hearderData in lookupData"><span>{{ hearderData.sysFieldName }}</span></th>
+    <!-- <th>Actions</th> -->
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-if="$index%lookupData.length==0" ng-repeat="data in testData">
+    <td>
+        {{($index/lookupData.length)+1}}
+    </td>
+    <td ng-repeat="i in tableDataArray">
+        <span editable-text="testData[$parent.$index+i].value" blur="cancel" onaftersave="updateTestData(testData[$parent.$parent.$index+i].testdataGenId,$data)">
+          {{ testData[$parent.$parent.$parent.$index+i].value || 'empty' }}
+        </span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="row">
+	<div class="col-md-2">
+	<button type="button" class="btn btn-danger btn-with-icon save-profile" ng-click="downLoadCsv()">
+      <i class="ion-android-checkmark-circle"></i>Download CSV</button>
+	</div>
+
+	<div class="col-md-offset-6">
+	<button type="button" class="btn btn-danger btn-with-icon save-profile" ng-click="downLoadSql(testData)">
+      <i class="ion-android-checkmark-circle"></i>Download SQL</button>
+	</div>
+</div>
+
