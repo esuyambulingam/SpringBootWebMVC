@@ -169,7 +169,7 @@ body {
 
                      alt="cognizantlogo" href="#" style="width:130px;margin-top:10px;margin-right:30px;" /></span>
 
-                    <a class="navbar-brand" href="index.html" style="margin:10px">Sample Application</a>
+                    <a class="navbar-brand" href="index.html" style="margin:10px">Sample Application V1</a>
                 </div>
 
                 <%-- <div class="collapse navbar-collapse navbar-right" style="display:inline;">
