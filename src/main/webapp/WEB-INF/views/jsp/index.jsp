@@ -22,7 +22,7 @@
     <link href="<c:url value='/static/css/bootstrap-select.css' />" rel="stylesheet" />
     <link href="<c:url value='/static/css/select.css' />" rel="stylesheet" />
     <link href="<c:url value='/static/css/ngNotificationsBar.min.css' />" rel="stylesheet" />
-    <%-- <link href="<c:url value='/static/css/main.css' />" rel="stylesheet" /> --%>
+    <link href="<c:url value='/static/css/main.css' />" rel="stylesheet" />
      <link href="<c:url value='/static/css/sidebar.css' />" rel="stylesheet" />
      <link href="<c:url value='/static/css/ng-bootstrap-submenu.min.css' />" rel="stylesheet" />
      <link href="<c:url value='/static/css/ng-bootstrap-submenu.css' />" rel="stylesheet" />
