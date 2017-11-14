@@ -10,7 +10,7 @@
   <meta name="_csrf_header" content="${_csrf.headerName}"/>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv='Content-Security-Policy'  content="frame-src *,child-src *">	
-  <title>SpringBoot Web MVC </title>
+  <title>SpringBoot Web MVC 123 </title>
 
 
 	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet" />
